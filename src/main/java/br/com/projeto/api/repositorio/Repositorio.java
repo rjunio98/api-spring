@@ -15,4 +15,7 @@ public interface Repositorio extends CrudRepository<Pessoa, Integer> {
 
     Pessoa findByCodigo(int codigo);
 
+    List<Pessoa> findByOrderByNome();
+
+
 }
