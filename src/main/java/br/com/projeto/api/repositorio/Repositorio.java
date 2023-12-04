@@ -28,4 +28,6 @@ public interface Repositorio extends CrudRepository<Pessoa, Integer> {
 
     @Query(value = "SELECT SUM(idade) FROM Pessoa", nativeQuery = true)
     int somaIdades();
+
+    int countByCodigo(int codigo);
 }
