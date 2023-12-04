@@ -1,10 +1,13 @@
 package br.com.projeto.api.modelo;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "clientes")
@@ -13,7 +16,11 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
+
+    @NotEmpty(message = "O nome é obrigatório")
     private String nome;
+
+    @Email(message = "O email é obrigatório")
     private String email;
 
     public int getCodigo() {
